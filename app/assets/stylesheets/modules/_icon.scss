@@ -1,0 +1,16 @@
+// Color L&C's icon and adjust its position
+
+.geoblacklight-lewis-clark {
+  &::before {
+    color: $brand-primary;
+    margin-right: -3px;
+    padding-left: 3px;
+  }
+}
+// Remove default coloration from Stanford's
+
+.geoblacklight-stanford {
+  &::before {
+    color: $gray-light;
+  }
+}
