@@ -34,7 +34,7 @@ FIELDS:
   :SOURCE: 'dc_source_sm'
 
 # Institution deployed at
-INSTITUTION: 'Stanford'
+INSTITUTION: 'Lewis & Clark'
 
 # Metadata shown in tool panel
 METADATA_SHOWN:
