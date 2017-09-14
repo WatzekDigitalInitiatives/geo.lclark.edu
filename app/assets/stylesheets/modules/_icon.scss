@@ -7,6 +7,15 @@
     padding-left: 3px;
   }
 }
+// Keep the icon light for visibility inside buttons
+
+.btn-primary {
+  .geoblacklight-lewis-clark {
+    &::before {
+      color: $btn-primary-color;
+    }
+  }
+}
 // Remove default coloration from Stanford's
 
 .geoblacklight-stanford {

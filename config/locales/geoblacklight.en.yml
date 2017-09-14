@@ -5,3 +5,8 @@ en:
       search_heading: 'Get started here'
       category_heading: 'Browse by category'
       map_heading: 'Browse by location'
+      institution:
+        heading: 'Maps at Lewis & Clark'
+        view_layers_button: 'View all layers'
+        featured_maps_heading: 'Featured maps'
+        featured_collections_heading: 'Featured collections'

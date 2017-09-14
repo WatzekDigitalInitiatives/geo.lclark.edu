@@ -1,3 +1,29 @@
-.jumbotron{
+.jumbotron {
   padding-top: 10px;
+}
+
+.institution-area {
+  margin-top: 2rem;
+
+  .featured-collections,
+  .featured-maps {
+    margin-top: 2rem;
+  }
+
+  .panel {
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+      transition: .2s ease-in-out;
+      z-index: 5000;
+    }
+
+    .panel-body,
+    .panel-footer {
+      color: $text-color;
+    }
+
+    .featured-map-img {
+      width: 100%;
+    }
+  }
 }
