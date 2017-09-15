@@ -72,6 +72,7 @@ WMS_PARAMS:
 OPACITY_CONTROL: &opacity_control
   CONTROLS:
     - 'Opacity'
+    - 'Fullscreen'
 
 LEAFLET:
   MAP:
