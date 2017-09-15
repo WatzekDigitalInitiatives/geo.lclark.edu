@@ -1,0 +1,15 @@
+<%= content_tag :h3, t('geoblacklight.home.institution.featured_maps_heading') %>
+<div class='row featured-maps'>
+    <% maps.each do |map| %>
+        <%= link_to "catalog/#{map[:slug]}" do %>
+        <div class='col-md-4'>
+            <div class='panel panel-default'>
+                <div class='panel-body'>
+                    <%= image_tag "thumb/#{map[:slug]}.jpg", :class => 'featured-map-img', :alt => map[:title] %>
+                </div>
+                <div class='panel-footer'><%= map[:title] %></div>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>
