@@ -1,3 +1,5 @@
 language: ruby
 rvm:
   - 2.2.5
+notifications:
+    slack: watzekdi:GytGd6DHh3hzm3YVnLbREmWt
