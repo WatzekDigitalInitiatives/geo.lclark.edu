@@ -1,5 +1,9 @@
 cache: bundler
 language: ruby
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database geo_lclark_test;' -U postgres
 rvm:
   - 2.2.5
 notifications:
