@@ -1,6 +1,6 @@
 # geo.lclark.edu
 
-[![Build Status](https://travis-ci.org/WatzekDigitalInitiatives/geo.lclark.edu.svg?branch=spec_documentation)](https://travis-ci.org/WatzekDigitalInitiatives/geo.lclark.edu)
+[![Build Status](https://travis-ci.org/watzek/geo.lclark.edu.svg?branch=spec_documentation)](https://travis-ci.org/watzek/geo.lclark.edu)
 [![Docker Image](https://images.microbadger.com/badges/image/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
 [![Docker Version](https://images.microbadger.com/badges/version/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
 
@@ -19,7 +19,7 @@ Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at 
 
 1. Clone the repository:
 ```
-git clone https://github.com/WatzekDigitalInitiatives/geo.lclark.edu.git
+git clone https://github.com/watzek/geo.lclark.edu.git
 ```
 
 2. Inside `geo.lclark.edu` directory install the gems:
