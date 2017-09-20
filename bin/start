@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sleep 15
+rake db:migrate
+bin/rails s -b 0.0.0.0

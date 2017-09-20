@@ -17,4 +17,6 @@ test:
 
 production:
   <<: *default
-  database: geo_lclark_prod
+  host: <%= ENV.fetch("DB_HOST") { "db" } %>
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
+  user: <%= ENV.fetch("DB_USER") { "postgres" } %>

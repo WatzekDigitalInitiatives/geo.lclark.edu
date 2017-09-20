@@ -1,6 +1,8 @@
 # geo.lclark.edu
 
 [![Build Status](https://travis-ci.org/WatzekDigitalInitiatives/geo.lclark.edu.svg?branch=spec_documentation)](https://travis-ci.org/WatzekDigitalInitiatives/geo.lclark.edu)
+[![Docker Image](https://images.microbadger.com/badges/image/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
+[![Docker Version](https://images.microbadger.com/badges/version/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
 
 Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at [geo.lclark.edu](geo.lclark.edu).
 
@@ -10,7 +12,7 @@ Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at 
 
 1. [PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres).
   - Make sure it is configured in a way that it uses your current system's credential. More information can be found [here](https://stackoverflow.com/questions/24038316/rails-connects-to-database-without-username-or-password/24039062#24039062).
-  
+
 2. [Ruby](https://www.ruby-lang.org/en/documentation/installation/) >= 2.2.5
 
 ### Installing
@@ -49,7 +51,7 @@ rake geoblacklight:server
 
 3. Write spec or integration tests using `rspec` or `capybara`
 
-4. Make sure your commit message reads: 
+4. Make sure your commit message reads:
 ```
 (#Issue No.) Commit message describing the change made by this patch
 ```
