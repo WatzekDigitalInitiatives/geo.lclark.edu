@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+
+  geoblacklight:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      SOLR_URL: http://geo.lclark.edu:8983/solr/geoblacklight
