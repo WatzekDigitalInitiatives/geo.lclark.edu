@@ -14,6 +14,7 @@ describe CallbacksController do
       @user =  instance_double('User',
                                :uid => '12345',
                                :provider => 'google_oauth2',
+                               :admin => false,
                                :email => 'test@lclark.edu')
       request.env['omniauth.auth'] = @omniauth
     end
@@ -26,8 +27,21 @@ describe CallbacksController do
 
     it 'should call from_omniauth method and sign_in_and_redirect' do
       expect(User).to receive(:from_omniauth).with(request.env['omniauth.auth']).and_return(@user)
+      expect(subject).to receive(:set_user_role).with(@user)
       expect(subject).to receive(:sign_in_and_redirect).with(@user)
       post :google_oauth2
+    end
+
+    it 'should give admin attribute if a user is admin' do
+      expect(File).to receive(:read).and_return("test@lclark.edu\ntest2@lclark.edu")
+      expect(@user).to receive(:update_attribute).with(:admin, true)
+      CallbacksController.new.set_user_role(@user)
+    end
+
+    it 'should revoke admin attribute if a user is not admin' do
+      expect(File).to receive(:read).and_return("nouser@lclark.edu")
+      expect(@user).to receive(:update_attribute).with(:admin, false)
+      CallbacksController.new.set_user_role(@user)
     end
 
   end
