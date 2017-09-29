@@ -1,4 +1,30 @@
+.navbar-inverse {
+  background-color: $gray-lighter;
+}
+
+#header-navbar {
+  .navbar-brand {
+    margin-top: 1rem;
+  }
+
+  .navbar-nav {
+    padding-top: .5rem;
+  }
+
+  a {
+    color: $gray-dark;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+}
+
 .jumbotron {
+  background: $jumbotron-image;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 10px;
 }
 
