@@ -89,3 +89,6 @@ LEAFLET:
       <<: *opacity_control
     IMAGEMAPLAYER:
       <<: *opacity_control
+
+# Address of submission interface (for header link)
+SUBMIT_URL: <%= ENV['SUBMIT_URL'] || "http://127.0.0.1:80/submit" %>
