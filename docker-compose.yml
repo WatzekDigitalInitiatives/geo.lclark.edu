@@ -11,3 +11,4 @@ services:
       - 3000:3000
     environment:
       SOLR_URL: http://geo.lclark.edu:8983/solr/geoblacklight
+      SUBMIT_URL: http://geo.lclark.edu/submit
