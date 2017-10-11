@@ -101,6 +101,8 @@ GEM
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
+    figs (2.0.0)
+      git (~> 1.2.6)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     geo_combine (0.3.1)
@@ -122,6 +124,7 @@ GEM
       leaflet-rails (~> 0.7.3)
       rails (~> 5.0)
     geoblacklight-icons (1.1.0)
+    git (1.2.9.1)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashie (3.5.6)
@@ -323,6 +326,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.6)
+  figs
   geoblacklight (>= 1.4)
   jbuilder (~> 2.5)
   jquery-rails

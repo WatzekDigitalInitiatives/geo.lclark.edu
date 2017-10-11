@@ -17,6 +17,6 @@ test:
 
 production:
   <<: *default
-  host: <%= ENV.fetch("DB_HOST") { "db" } %>
-  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
-  user: <%= ENV.fetch("DB_USER") { "postgres" } %>
+  host: <%= ENV.fetch("PROD_DB_HOST") { "db" } %>
+  port: <%= ENV.fetch("PROD_DB_PORT") { 5432 } %>
+  user: <%= ENV.fetch("PROB_DB_USER") { "postgres" } %>
