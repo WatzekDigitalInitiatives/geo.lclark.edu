@@ -2,11 +2,11 @@ cache: bundler
 language: ruby
 sudo: required
 services:
-  - postgresql
-  - rabbitmq
+- postgresql
+- rabbitmq
 before_script:
-  - psql -c 'create database geo_lclark_test;' -U postgres
+- psql -c 'create database geo_lclark_test;' -U postgres
 rvm:
-  - 2.2.5
+- 2.2.5
 notifications:
-    slack: watzekdi:GytGd6DHh3hzm3YVnLbREmWt
+  slack: watzekdi:GytGd6DHh3hzm3YVnLbREmWt
