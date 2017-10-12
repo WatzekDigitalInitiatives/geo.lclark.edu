@@ -4,6 +4,7 @@
 require_relative 'config/application'
 require 'solr_wrapper/rake_task' unless Rails.env.production?
 
+require 'sneakers/tasks'
 Rails.application.load_tasks
 
 # Clearing out the original rake test task that runs minitest

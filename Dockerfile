@@ -24,12 +24,13 @@ RUN bundle install
 ENV RAILS_ENV "production"
 ENV RAILS_SERVE_STATIC_FILES "true"
 ENV SOLR_URL "http://solr:8983/solr/geoblacklight"
+ENV RABBIT_SERVER "amqp://mq:5672"
 ENV DEVISE_SECRET_KEY "$(rake secret)"
 ENV SECRET_KEY_BASE "$(rake secret)"
 
 # Persist data
 VOLUME ["/usr/src/geoblacklight/tmp"]
 
-# Start the app
+# Compile assets and expose port
 RUN rake assets:precompile
-CMD ["sh", "-c", "/usr/src/geoblacklight/bin/start"]
+EXPOSE 3000
