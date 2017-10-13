@@ -15,6 +15,8 @@ Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at 
 
 2. [Ruby](https://www.ruby-lang.org/en/documentation/installation/) >= 2.2.5
 
+3. [RabbitMQ](https://www.rabbitmq.com/download.html)
+
 ### Installing
 
 1. Clone the repository:
