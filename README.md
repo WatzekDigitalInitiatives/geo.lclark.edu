@@ -4,7 +4,7 @@
 [![Docker Image](https://images.microbadger.com/badges/image/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
 [![Docker Version](https://images.microbadger.com/badges/version/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
 
-Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at [geo.lclark.edu](geo.lclark.edu).
+Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at [geo.lclark.edu](http://geo.lclark.edu).
 
 ## Development
 
