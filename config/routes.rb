@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new
 resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
   concerns :gbl_exportable
@@ -23,7 +23,7 @@ resources :download, only: [:show]
     concerns :searchable
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users
   concern :exportable, Blacklight::Routes::Exportable.new
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do

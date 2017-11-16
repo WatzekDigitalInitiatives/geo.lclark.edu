@@ -73,5 +73,6 @@ end
 gem 'rsolr', '>= 1.0'
 gem 'jquery-rails'
 gem 'devise'
-gem 'devise-guests', '~> 0.6'
-gem 'omniauth-google-oauth2'
+
+# Use devise_saml_authenticatable for SAML authentication
+gem 'devise_saml_authenticatable'
