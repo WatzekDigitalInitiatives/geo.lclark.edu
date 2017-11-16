@@ -105,7 +105,7 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
+  # config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = 'c2021a76707084fd6f6cf02c474ccbae00c95644c86691ff3d79328b80fded1b2c8077cae5578e3846c5ff91fca5c58cdf4a3965d5b88a3d703fedbfe00fd8f0'
@@ -136,7 +136,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  # config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -146,7 +146,7 @@ Devise.setup do |config|
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
+  # config.expire_all_remember_me_on_sign_out = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -157,12 +157,12 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  # config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  # config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -203,7 +203,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 6.hours
+  # config.reset_password_within = 6.hours
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
@@ -251,7 +251,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+  # config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -275,4 +275,47 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # ==> Configuration for :saml_authenticatable
+  # Create user if the user does not exist. (Default is false)
+  config.saml_create_user = true
+
+  # Update the attributes of the user after a successful login. (Default is false)
+  config.saml_update_user = true
+
+  # Set the default user key. The user will be looked up by this key. Make
+  # sure that the Authentication Response includes the attribute.
+  config.saml_default_user_key = :username
+
+  # Optional. This stores the session index defined by the IDP during login.  If provided it will be used as a salt
+  # for the user's session to facilitate an IDP initiated logout request.
+  config.saml_session_index_key = :session_index
+
+  # You can set this value to use Subject or SAML assertation as info to which email will be compared.
+  # If you don't set it then email will be extracted from SAML assertation attributes.
+  config.saml_use_subject = true
+
+  # You can support multiple IdPs by setting this value to a class that implements a #settings method which takes
+  # an IdP entity id as an argument and returns a hash of idp settings for the corresponding IdP.
+  config.idp_settings_adapter = nil
+
+  # You provide you own method to find the idp_entity_id in a SAML message in the case of multiple IdPs
+  # by setting this to a custom reader class, or use the default.
+  # config.idp_entity_id_reader = DeviseSamlAuthenticatable::DefaultIdpEntityIdReader
+
+  # You can set a handler object that takes the response for a failed SAML request and the strategy,
+  # and implements a #handle method. This method can then redirect the user, return error messages, etc.
+  # config.saml_failed_callback = nil
+
+  # Configure with your SAML settings (see ruby-saml's README for more information: https://github.com/onelogin/ruby-saml).
+  config.saml_configure do |settings|
+    # assertion_consumer_service_url is required starting with ruby-saml 1.4.3: https://github.com/onelogin/ruby-saml#updating-from-142-to-143
+    settings.assertion_consumer_service_url     = "https://geo.watzek.cloud/users/saml/auth"
+    settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+    settings.name_identifier_format             = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+    settings.issuer                             = "https://geo.watzek.cloud"
+    settings.idp_slo_target_url                 = ""
+    settings.idp_sso_target_url                 = "https://sso.connect.pingidentity.com/sso/idp/SSO.saml2?saasid=8655b747-222d-49d5-9575-2e12b494552d&idpid=7e56e0ab-c5d9-4f27-9044-d8b05854a008"
+    settings.idp_cert                           = ENV['IDP_CERT']
+  end
 end
