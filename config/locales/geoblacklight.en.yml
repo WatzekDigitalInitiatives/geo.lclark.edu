@@ -1,9 +1,9 @@
 en:
   geoblacklight:
     home:
-      headline: 'Find maps and data'
+      headline: 'Find maps with Compass'
       search_heading: 'Get started here'
-      category_heading: 'Browse by category'
+      category_heading: 'Browse all maps'
       map_heading: 'Browse by location'
       institution:
         heading: 'Maps at Lewis & Clark'
