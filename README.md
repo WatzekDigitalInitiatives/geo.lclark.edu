@@ -1,10 +1,10 @@
-# geo.lclark.edu
+# Compass
 
-[![Build Status](https://travis-ci.org/watzek/geo.lclark.edu.svg?branch=spec_documentation)](https://travis-ci.org/watzek/geo.lclark.edu)
-[![Docker Image](https://images.microbadger.com/badges/image/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
-[![Docker Version](https://images.microbadger.com/badges/version/watzek/geo.lclark.edu.svg)](https://microbadger.com/images/watzek/geo.lclark.edu)
+[![Build Status](https://travis-ci.org/watzek/compass.svg?branch=spec_documentation)](https://travis-ci.org/watzek/compass)
+[![Docker Image](https://images.microbadger.com/badges/image/watzek/compass.svg)](https://microbadger.com/images/watzek/compass)
+[![Docker Version](https://images.microbadger.com/badges/version/watzek/compass.svg)](https://microbadger.com/images/watzek/compass)
 
-Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at [geo.lclark.edu](http://geo.lclark.edu).
+Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance, hosted at [geo.watzek.cloud](https://geo.watzek.cloud).
 
 ## Development
 
@@ -21,10 +21,10 @@ Lewis and Clark's [Geoblacklight](http://geoblacklight.org/) instance hosted at 
 
 1. Clone the repository:
 ```
-git clone https://github.com/watzek/geo.lclark.edu.git
+git clone https://github.com/watzek/compass.git
 ```
 
-2. Inside `geo.lclark.edu` directory install the gems:
+2. Inside `compass` directory install the gems:
 ```
 bundle install
 ```
@@ -63,7 +63,7 @@ Example commit message:
 (#23) Enable fullscreen leaflet
 ```
 
-If your PR does not bring in a big change in functionality like updating documentaion, etc. you can file a "maint" PR.
+If your PR does not bring in a big change in functionality like updating documentation, etc. you can file a "maint" PR.
 
 Example commit message for maint PR:
 ```

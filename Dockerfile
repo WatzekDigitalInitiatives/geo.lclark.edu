@@ -9,8 +9,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-type="Git" \
       org.label-schema.license="Apache-2.0" \
-      org.label-schema.vcs-url="https://github.com/watzek/geo.lclark.edu.git" \
-      org.label-schema.url="https://geo.lclark.edu/"
+      org.label-schema.vcs-url="https://github.com/watzek/compass.git" \
+      org.label-schema.url="https://geo.watzek.cloud/"
 
 # Install dependencies
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get install -y nodejs
