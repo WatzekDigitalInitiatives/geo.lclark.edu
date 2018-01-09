@@ -10,3 +10,6 @@ rvm:
 - 2.2.5
 notifications:
   slack: watzekdi:GytGd6DHh3hzm3YVnLbREmWt
+before_install:
+- openssl aes-256-cbc -K $encrypted_856510720fb0_key -iv $encrypted_856510720fb0_iv
+  -in idp_cert.enc -out idp_cert -d
