@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'geo@lclark.edu'
+  config.mailer_sender = 'compass@watzek.cloud'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -310,12 +310,13 @@ Devise.setup do |config|
   # Configure with your SAML settings (see ruby-saml's README for more information: https://github.com/onelogin/ruby-saml).
   config.saml_configure do |settings|
     # assertion_consumer_service_url is required starting with ruby-saml 1.4.3: https://github.com/onelogin/ruby-saml#updating-from-142-to-143
-    settings.assertion_consumer_service_url     = "https://geo.watzek.cloud/users/saml/auth"
-    settings.assertion_consumer_service_binding = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-    settings.name_identifier_format             = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
-    settings.issuer                             = "https://geo.watzek.cloud"
-    settings.idp_slo_target_url                 = ""
-    settings.idp_sso_target_url                 = "https://sso.connect.pingidentity.com/sso/idp/SSO.saml2?saasid=8655b747-222d-49d5-9575-2e12b494552d&idpid=7e56e0ab-c5d9-4f27-9044-d8b05854a008"
-    settings.idp_cert                           = ENV['IDP_CERT']
+    settings.assertion_consumer_service_url     = 'https://geo.watzek.cloud/users/saml/auth'
+    settings.assertion_consumer_service_binding = 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
+    settings.name_identifier_format             = 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified'
+    settings.issuer                             = 'https://geo.watzek.cloud'
+    settings.idp_slo_target_url                 = ''
+    settings.idp_sso_target_url                 = 'https://sso.connect.pingidentity.com/sso/idp/SSO.saml2?saasid=8655b747-222d-49d5-9575-2e12b494552d&idpid=7e56e0ab-c5d9-4f27-9044-d8b05854a008'
+    settings.idp_cert                           = ENV['IDP_CERT'] || File.open('/run/secrets/idp_cert', &:read)
+    settings.security[:want_assertions_signed]  = true
   end
 end
