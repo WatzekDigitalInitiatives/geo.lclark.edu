@@ -316,7 +316,13 @@ Devise.setup do |config|
     settings.issuer                             = 'https://geo.watzek.cloud'
     settings.idp_slo_target_url                 = ''
     settings.idp_sso_target_url                 = 'https://sso.connect.pingidentity.com/sso/idp/SSO.saml2?saasid=8655b747-222d-49d5-9575-2e12b494552d&idpid=7e56e0ab-c5d9-4f27-9044-d8b05854a008'
-    settings.idp_cert                           = ENV['IDP_CERT'] || File.open('idp_cert', &:read) || File.open('/run/secrets/idp_cert', &:read)
-    settings.security[:want_assertions_signed]  = true
+    settings.idp_cert = if File.exist?('idp_cert')
+                          File.open('idp_cert', &:read) # local
+                        elsif File.exist?('/run/secrets/idp_cert')
+                          File.open('/run/secrets/idp_cert', &:read) # production
+                        else
+                          '' # docker automated builds
+                        end
+    settings.security[:want_assertions_signed] = true
   end
 end
