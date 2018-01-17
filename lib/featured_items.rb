@@ -1,9 +1,9 @@
 module FeaturedItems
   def self.collections
     [
-      { title: 'Historic Portland Maps', description: 'A collection of maps depicting Portland from the mid-nineteenth century onward', f: { 'dct_isPartOf_sm' => ['PDX'] } },
-      { title: 'ENVS220 Resource Collections', description: 'Maps and data used as part of the Environmental Studies 220 class', f: { 'dct_isPartOf_sm' => ['ENVS220'] } },
-      { title: 'Lewis & Clark Expedition Maps', description: 'Historic maps of the Lewis & Clark expedition and the Corps of Discovery', f: { 'dct_isPartOf_sm' => ['LCtrail'] } }
+      { title: 'Historic Maps of Portland', description: 'A collection of maps depicting Portland from the mid-nineteenth century onward', f: { 'dct_isPartOf_sm' => ['Historic Maps of Portland'] } },
+      { title: 'Oregon Metro RLIS', description: 'Layers from Oregon Metro\'s Regional Land Information System', f: { 'dct_isPartOf_sm' => ['Oregon Metro RLIS'] } },
+      { title: 'Lewis & Clark Expedition Maps', description: 'Historic maps of the Lewis & Clark expedition and the Corps of Discovery', f: { 'dct_isPartOf_sm' => ['Lewis & Clark Expedition Maps'] } }
     ]
   end
 
