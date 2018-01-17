@@ -1,0 +1,34 @@
+.navbar {
+  background-color: $gray-lighter;
+}
+
+#header-navbar {
+  border-bottom: 1px solid $gray;
+  padding: 0 1rem;
+  .navbar-brand {
+    margin-top: 1rem;
+    width: 150px;
+  }
+  .navbar-nav {
+    padding-top: .5rem;
+  }
+
+  a {
+    color: $gray-dark;
+
+    &:hover {
+      color: $link-hover-color;
+    }
+  }
+  .navbar-toggle {
+    border-color: $gray;
+    margin-right: 0;
+    margin-top: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #header-navbar {
+    padding: 0;
+  }
+}
