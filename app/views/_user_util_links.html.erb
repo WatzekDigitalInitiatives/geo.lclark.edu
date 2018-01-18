@@ -3,9 +3,9 @@
         <%= render_nav_actions do |config, action|%>
             <li class="nav-item"><%= action %></li>
         <% end %>
-        <li>
+        <!-- <li>
           <%= link_to t('geoblacklight.header_links.submit'), Settings.SUBMIT_URL, class: 'nav-link' %>
-        </li>
+        </li> -->
 
         <% if has_user_authentication_provider? %>
             <% if current_user %>
